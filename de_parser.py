@@ -34,7 +34,7 @@ async def id_pars(coinname):
     for token in data['data']:
         if token['name'].lower() == coinname or token['symbol'].lower() == coinname:
             result = await price_pars(token['id'])
-            return f"{result}$"
+            return float(result)
 
 
 async def price_pars(id):
@@ -43,4 +43,4 @@ async def price_pars(id):
     data = response.json()
     price_info = data['data']['values']['USD']
     price = price_info['price']
-    return f"{price:.2f}"
+    return float(price)
