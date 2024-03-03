@@ -2,6 +2,7 @@ from aiogram import Router, F
 from aiogram.types import Message
 from aiogram.filters import Command
 from de_parser import id_pars
+import re
 
 coin = ''
 
@@ -16,6 +17,14 @@ async def hell(message: Message):
 @router.message(F.text.lower())
 async def coin_request(message: Message):
     global coin
-    coin = message.text.lower()
-    result = await id_pars(coin)
-    await message.answer(str(result))
+    match = re.match(r'^(\d+(\.\d+)?)(\s+)?(.+)?$', message.text.lower())
+    if match:
+        number = float(match.group(1)) if match.group(1) else None
+        coin = match.group(4).strip() if match.group(4) else None
+        coin_price = await id_pars(coin)
+        result = number * coin_price
+    else:
+        number = None
+        coin = message.text.lower().strip()
+        result = await id_pars(coin)
+    await message.answer(f"{result:.2f}$")
