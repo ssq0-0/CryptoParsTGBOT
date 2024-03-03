@@ -1,9 +1,7 @@
-from aiogram.filters.state import State, StatesGroup
-from aiogram.fsm.context import FSMContext
-from aiogram import Router, types, F
+from aiogram import Router, F
 from aiogram.types import Message
 from aiogram.filters import Command
-from de_parser import coinpars
+from de_parser import id_pars
 
 coin = ''
 
@@ -15,9 +13,9 @@ async def hell(message: Message):
     await message.answer("Hello")
 
 
-@router.message(F.text.lower)
+@router.message(F.text.lower())
 async def coin_request(message: Message):
     global coin
-    coin = message.text
-    result = await coinpars(coin)
+    coin = message.text.lower()
+    result = await id_pars(coin)
     await message.answer(str(result))
