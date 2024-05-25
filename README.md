@@ -1,53 +1,55 @@
 # CryptoParsTGBOT
 
-CryptoParsTGBOT — это Telegram-бот, позволяющий пользователям запрашивать текущие цены криптовалют, а также рассчитывать их стоимость в долларах США на основе указанного количества (например, BTC = 62342$, 2 BTC = 124784$).
+CryptoParsTGBOT is a Telegram bot that allows users to request current cryptocurrency prices and calculate their value in US dollars based on a specified amount (e.g., BTC = $62342, 2 BTC = $124784).
 
-# Начало работы
-Эти инструкции помогут вам запустить копию бота локально на вашем компьютере или сервере для разработки и тестирования. Следуйте этим шагам для настройки вашей копии.
+# Getting Started
+These instructions will help you set up a copy of the bot locally on your computer or server for development and testing. Follow these steps to configure your copy.
 
-### Предварительные требования
-Перед началом убедитесь, что у вас установлены:
+### Prerequisites
+Before you begin, ensure you have:
 
-* Python 3.6 или выше
-* pip (менеджер пакетов для Python)
+* Python 3.6 or higher
+* pip (Python package manager)
 
-### Установка
-Для начала клонируйте репозиторий на ваш локальный компьютер:
+### Installation
+First, clone the repository to your local computer:
 
 `git clone https://github.com/ssq0-0/CryptoParsTGBOT.git`
 
-Перейдите в директорию проекта:
+Navigate to the project directory:
 
 `cd CryptoParsTGBOT`
 
-Установите необходимые зависимости:
+Install the necessary dependencies:
 
 `pip install -r requirements.txt`
 
-### Конфигурация
+### Configuration
 
-Чтобы бот работал корректно, необходимо добавить токены Telegram и API крипторанка в файл `tg_token.py`:
+To ensure the bot works correctly, you need to add your Telegram and CryptoRank API tokens to the `tg_token.py` file:
 
-`token='ваш_токен'`
+```python
+token='your_token'
 
-`api_key = 'ваш_токен'`
+api_key = 'your_token'
+```
 
-### Запуск
+### Running
 
-После настройки конфигурации вы можете запустить бота командой:
+After configuring, you can start the bot with the command:
 
 `python main.py`
 
-### Развертывание на сервере
+### Deployment on a Server
 
-Для развертывания бота на сервере рекомендуется использовать git для клонирования проекта непосредственно на сервер, а затем повторить шаги установки и конфигурации.
+To deploy the bot on a server, it is recommended to use git to clone the project directly on the server and then repeat the installation and configuration steps.
 
-### Использованные инструменты
+### Tools Used
 
-* [Python](URL "https://docs.python.org/3/") - Язык программирования
-* [Telegram Bot API](URL "https://core.telegram.org/bots/api") - API для создания ботов в Telegram
-* [CryptoRank API](URL "https://api.cryptorank.io/docs") - API для получения данных о криптовалютах
+* [Python](https://docs.python.org/3/) - Programming language
+* [Telegram Bot API](https://core.telegram.org/bots/api) - API for creating bots on Telegram
+* [CryptoRank API](https://api.cryptorank.io/docs) - API for obtaining cryptocurrency data
 
-### Автор
+### Author
 
-Разработчик проекта - [ssq0-0](URL "https://github.com/ssq0-0")
+Project developer - [ssq0-0](https://github.com/ssq0-0)
